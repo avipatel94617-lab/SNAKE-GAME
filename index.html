@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <div class="header">
+            <h1>SNAKE</h1>
+            <div class="score-board">
+                <div class="score-box">
+                    <span>SCORE</span>
+                    <strong id="score">0</strong>
+                </div>
+                <div class="score-box">
+                    <span>HIGH SCORE</span>
+                    <strong id="high-score">0</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+            <!-- Start Screen Overlay -->
+            <div id="start-screen" class="overlay">
+                <h2>CLASSIC SNAKE</h2>
+                <p>Use Arrow Keys or WASD to move</p>
+                <p>Press SPACE to Pause</p>
+                <div class="difficulty">
+                    <label for="speed-select">Speed:</label>
+                    <select id="speed-select">
+                        <option value="140">Slow</option>
+                        <option value="100" selected>Normal</option>
+                        <option value="65">Fast</option>
+                    </select>
+                </div>
+                <button id="start-btn" class="btn">START GAME</button>
+            </div>
+
+            <!-- Pause Screen Overlay -->
+            <div id="pause-screen" class="overlay hidden">
+                <h2>PAUSED</h2>
+                <p>Press SPACE or Resume to continue</p>
+                <button id="resume-btn" class="btn">RESUME</button>
+            </div>
+
+            <!-- Game Over Screen Overlay -->
+            <div id="gameover-screen" class="overlay hidden">
+                <h2>GAME OVER</h2>
+                <p>Your Score: <span id="final-score">0</span></p>
+                <p id="new-record-msg" class="record-msg hidden">New High Score!</p>
+                <button id="restart-btn" class="btn">PLAY AGAIN</button>
+            </div>
+        </div>
+
+        <!-- Mobile / On-Screen Controls -->
+        <div class="mobile-controls">
+            <button class="ctrl-btn" id="btn-up">▲</button>
+            <div class="ctrl-row">
+                <button class="ctrl-btn" id="btn-left">◀</button>
+                <button class="ctrl-btn" id="btn-down">▼</button>
+                <button class="ctrl-btn" id="btn-right">▶</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
